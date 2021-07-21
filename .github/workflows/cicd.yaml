@@ -25,3 +25,14 @@ jobs:
 
       - name: Run automated test
         run: dotnet test -c Release --no-build
+
+      - name: Publish app
+        run: dotnet publish -c Release -o ./out
+
+      - name: Deploy to Azure Web Apps
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: TestProject20190109124351
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_SECRET }}
+          package: ./out
+
