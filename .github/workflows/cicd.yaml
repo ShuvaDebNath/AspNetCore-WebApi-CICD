@@ -18,7 +18,7 @@ jobs:
           dotnet-version: '3.1.x'
 
       - name: Restore dependencies
-        run: dotnet restore "Test-CI-CD.sln"
+        run: dotnet restore
 
       - name: Build app
         run: dotnet build
