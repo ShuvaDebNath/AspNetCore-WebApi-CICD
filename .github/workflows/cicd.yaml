@@ -21,4 +21,4 @@ jobs:
         run: dotnet restore "Test-CI-CD.sln"
 
       - name: Build app
-        run: dotnet build -c Release --no-restore
+        run: dotnet build
