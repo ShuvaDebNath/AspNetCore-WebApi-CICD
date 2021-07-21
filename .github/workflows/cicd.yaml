@@ -21,4 +21,7 @@ jobs:
         run: dotnet restore
 
       - name: Build app
-        run: dotnet build
+        run: dotnet build -c Release --no-restore
+
+      - name: Run automated test
+        run: dotnet test -c Release --no-build
